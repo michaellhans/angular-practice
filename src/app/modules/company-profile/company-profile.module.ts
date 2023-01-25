@@ -8,7 +8,6 @@ import { ProfileComponent } from './components/profile/profile.component';
   imports: [
     SharedModule,
     CompanyProfileRoutingModule
-  ],
-  exports: [ ProfileComponent ]
+  ]
 })
 export class CompanyProfileModule { }
