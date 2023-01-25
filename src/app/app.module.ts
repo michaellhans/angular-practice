@@ -7,7 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MessagesComponent } from './components/messages/messages.component';
-import { ProfileItemComponent } from './components/profile-item/profile-item.component';
+import { SharedModule } from './shared.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +15,12 @@ import { ProfileItemComponent } from './components/profile-item/profile-item.com
     TopBarComponent,
     DashboardComponent,
     ProfileComponent,
-    MessagesComponent,
-    ProfileItemComponent
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
