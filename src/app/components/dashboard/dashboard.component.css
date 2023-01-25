@@ -1,0 +1,8 @@
+.menu {
+    float: left;
+    width: 40%;
+    padding: 20px;
+    margin: 2% 5%;
+    border: 2px solid black;
+    border-radius: 30px;
+}

@@ -1,0 +1,14 @@
+<div *ngIf="profile">
+  <h2>Karyawan {{profile.id}}</h2> 
+  <div class="profile-pic">
+      <img [src]="profile.imgUrl" />
+      <h3>{{profile.name}}</h3>
+  </div>
+
+  <app-profile-item [name]="'Alamat'" [value]="profile.alamat"></app-profile-item>
+  <app-profile-item [name]="'Kota / Kabupaten'" [value]="profile.kota"></app-profile-item>
+  <app-profile-item [name]="'Provinsi'" [value]="profile.provinsi"></app-profile-item>
+  <app-profile-item [name]="'Negara'" [value]="profile.negara"></app-profile-item>
+  <app-profile-item [name]="'Kode Pos'" [value]="profile.kodepos"></app-profile-item>
+  <app-profile-item [name]="'Telepon'" [value]="profile.telepon"></app-profile-item>
+</div>
