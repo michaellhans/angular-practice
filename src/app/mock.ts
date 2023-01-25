@@ -1,4 +1,4 @@
-export interface Profile {
+export interface CompanyProfile {
     id: number;
     imgUrl: string;
     name: string;
@@ -8,6 +8,19 @@ export interface Profile {
     negara: string;
     kodepos: string;
     telepon: string;
+}
+
+export const COMPANY_PROFILE =
+{
+    id: 1,
+    imgUrl: "../assets/gdp-labs.jpg",
+    name: "Michael Hans",
+    alamat: "Jalan Ganesha No. 10",
+    kota: "Bandung",
+    provinsi: "Jawa Barat",
+    negara: "Indonesia",
+    kodepos: "40135",
+    telepon: "081315678220"
 }
 
 export const EMPLOYEES = [
