@@ -53,7 +53,7 @@ export const EMPLOYMENT_DETAIL = {
     location: "Denpasar",
     reference: "Email",
     startDate: "15 Jan 2021",
-    pengganti: "",
+    pengganti: "Belum ada",
     vendor: "Apple",
 }
 

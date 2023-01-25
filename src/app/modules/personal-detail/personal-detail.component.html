@@ -1,0 +1,18 @@
+<div *ngIf="personalDetail">
+    <h2>Data Perekrutan</h2>
+    <app-attribute-item [name]="'Jenis Kelamin'" [value]="personalDetail.jenisKelamin"></app-attribute-item>
+    <div class="details">
+        <app-attribute-item [name]="'Tempat Lahir'" [value]="personalDetail.tempatLahir"></app-attribute-item>
+        <app-attribute-item [name]="'statusPerkawinan'" [value]="personalDetail.statusPerkawinan"></app-attribute-item>
+        <app-attribute-item [name]="'Ras'" [value]="personalDetail.ras"></app-attribute-item>
+        <app-attribute-item [name]="'Pekerja Asing'" [value]="personalDetail.pekerjaAsing"></app-attribute-item>
+        <app-attribute-item [name]="'Nomor Kartu Keluarga'" [value]="personalDetail.nomorKartuKeluarga"></app-attribute-item>
+        <app-attribute-item [name]="'Lampiran'" [value]="personalDetail.lampiran"></app-attribute-item>
+    </div>  
+    <div class="details">
+        <app-attribute-item [name]="'Tanggal Lahir'" [value]="personalDetail.tanggalLahir"></app-attribute-item>
+        <app-attribute-item [name]="'Agama'" [value]="personalDetail.agama"></app-attribute-item>
+        <app-attribute-item [name]="'Golongan Darah'" [value]="personalDetail.golonganDarah"></app-attribute-item>
+        <app-attribute-item [name]="'Kewarganegaraan'" [value]="personalDetail.kewarganegaraan"></app-attribute-item>
+    </div> 
+</div>

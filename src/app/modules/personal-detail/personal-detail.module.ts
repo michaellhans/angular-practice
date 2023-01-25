@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { PersonalDetailComponent } from './personal-detail.component';
+import { SharedModule } from '../shared/shared.module';
+import { PersonalDetailRoutingModule } from './personal-detail-routing-module';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    PersonalDetailComponent
+  ],
   imports: [
-    CommonModule
+    SharedModule,
+    PersonalDetailRoutingModule
   ]
 })
 export class PersonalDetailModule { }
