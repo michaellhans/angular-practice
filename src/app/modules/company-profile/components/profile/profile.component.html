@@ -1,14 +1,14 @@
-<div *ngIf="companyProfile">
+<div *ngIf="companyProfile$ | async as companyProfileX">
   <h2>Company Profile</h2> 
   <div class="companyProfile-pic">
-      <img [src]="companyProfile.imgUrl" />
-      <h3>{{companyProfile.name}}</h3>
+      <img [src]="companyProfileX.imgUrl" />
+      <h3>{{companyProfileX.name}}</h3>
   </div>
 
-  <app-attribute-item [name]="'Alamat'" [value]="companyProfile.alamat"></app-attribute-item>
-  <app-attribute-item [name]="'Kota / Kabupaten'" [value]="companyProfile.kota"></app-attribute-item>
-  <app-attribute-item [name]="'Provinsi'" [value]="companyProfile.provinsi"></app-attribute-item>
-  <app-attribute-item [name]="'Negara'" [value]="companyProfile.negara"></app-attribute-item>
-  <app-attribute-item [name]="'Kode Pos'" [value]="companyProfile.kodepos"></app-attribute-item>
-  <app-attribute-item [name]="'Telepon'" [value]="companyProfile.telepon"></app-attribute-item>
+  <app-attribute-item [name]="'Alamat'" [value]="companyProfileX.alamat"></app-attribute-item>
+  <app-attribute-item [name]="'Kota / Kabupaten'" [value]="companyProfileX.kota"></app-attribute-item>
+  <app-attribute-item [name]="'Provinsi'" [value]="companyProfileX.provinsi"></app-attribute-item>
+  <app-attribute-item [name]="'Negara'" [value]="companyProfileX.negara"></app-attribute-item>
+  <app-attribute-item [name]="'Kode Pos'" [value]="companyProfileX.kodepos"></app-attribute-item>
+  <app-attribute-item [name]="'Telepon'" [value]="companyProfileX.telepon"></app-attribute-item>
 </div>

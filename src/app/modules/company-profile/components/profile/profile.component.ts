@@ -1,23 +1,27 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CompanyProfileService } from 'src/app/modules/company-profile/services/company-profile.service';
+import { Component, OnInit } from '@angular/core';
 import { CompanyProfile } from 'src/app/mock';
+import { Observable } from 'rxjs';
+import { CompanyProfileState } from '../../company-profile.reducer';
+import { Store } from '@ngrx/store';
+import { fetch } from '../../company-profile.actions';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
-  companyProfile: CompanyProfile | undefined;
-  constructor(private route: ActivatedRoute, private companyProfileService: CompanyProfileService){}
+export class ProfileComponent implements OnInit {
+  companyProfile$: Observable<CompanyProfile>
+
+  constructor(private store: Store<CompanyProfileState>){
+    this.companyProfile$ = this.store.select(state => state.companyProfile);
+  }
 
   ngOnInit(): void {
     this.getCompanyProfile();
   }
 
   getCompanyProfile(): void {
-    this.companyProfileService.getCompanyProfile()
-      .subscribe(companyProfile => this.companyProfile = companyProfile);
+    this.store.dispatch(fetch());
   }
 }
