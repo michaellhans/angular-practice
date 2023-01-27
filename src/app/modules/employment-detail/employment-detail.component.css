@@ -1,4 +1,8 @@
+.general {
+    display: flex;
+    flex-direction: row;
+}
+
 .details {
-    float: left;
-    width: 50%;
+    flex: 50%;
 }

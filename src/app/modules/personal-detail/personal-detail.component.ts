@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { PersonalDetail } from 'src/app/mock';
-import { fetch } from './services/personal-detail.actions';
-import { selectPersonalDetail } from './services/personal-detail.reducer';
+import { change, editSuccess, fetch } from './services/personal-detail.actions';
+import { selectIsEdit, selectPersonalDetail } from './services/personal-detail.reducer';
 
 @Component({
   selector: 'app-personal-detail',
@@ -12,8 +13,12 @@ import { selectPersonalDetail } from './services/personal-detail.reducer';
 })
 export class PersonalDetailComponent {
   personalDetail$: Observable<PersonalDetail>;
+  isEdit$: Observable<boolean>;
+  @ViewChild('personalDetailForm') personalDetailForm: NgForm | null = null;
+
   constructor(private store: Store){
     this.personalDetail$ = store.select(selectPersonalDetail);
+    this.isEdit$ = store.select(selectIsEdit);
   }
 
   ngOnInit(): void {
@@ -22,5 +27,13 @@ export class PersonalDetailComponent {
 
   getPersonalDetail(): void {
     this.store.dispatch(fetch());
+  }
+
+  onEdit(): void {
+    this.store.dispatch(change());
+  }
+
+  onSubmit(event: PersonalDetail){
+    this.store.dispatch(editSuccess(event));
   }
 }

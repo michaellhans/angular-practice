@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { personalDetailReducer } from './services/personal-detail.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { PersonalDetailEffects } from './services/personal-detail.effects';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PersonalDetailEffects } from './services/personal-detail.effects';
     SharedModule,
     PersonalDetailRoutingModule,
     StoreModule.forFeature('personalDetail', personalDetailReducer),
-    EffectsModule.forFeature([PersonalDetailEffects])
+    EffectsModule.forFeature([PersonalDetailEffects]),
+    FormsModule
   ]
 })
 export class PersonalDetailModule { }

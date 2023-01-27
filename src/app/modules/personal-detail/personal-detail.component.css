@@ -1,4 +1,21 @@
+.general {
+    display: flex;
+    flex-direction: row;
+}
+
 .details {
-    float: left;
-    width: 50%;
+    flex: 50%;
+}
+
+h4 {
+    margin: 0;
+}
+
+input {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.form-button {
+    margin: 10px;
 }

@@ -6,12 +6,14 @@ import { RouterModule } from '@angular/router';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { ContainerComponent } from './components/container/container.component';
 import { MatListModule } from '@angular/material/list';
+import { AttributeItemFormComponent } from './components/attribute-item-form/attribute-item-form.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [AttributeItemComponent, MessagesComponent, TopBarComponent, ContainerComponent, ContainerComponent],
+  declarations: [AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent, ContainerComponent],
   imports: [
-    CommonModule, RouterModule, MatListModule
+    CommonModule, RouterModule, MatListModule, FormsModule, ReactiveFormsModule
   ],
-  exports: [ RouterModule, CommonModule, MatListModule, AttributeItemComponent, MessagesComponent, TopBarComponent, ContainerComponent ]
+  exports: [ RouterModule, CommonModule, MatListModule, FormsModule, ReactiveFormsModule, AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent ]
 })
 export class SharedModule { }
