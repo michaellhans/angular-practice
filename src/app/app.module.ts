@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { CompanyProfileModule } from './modules/company-profile/company-profile.module';
 import { CoreModule } from './modules/core/core.module';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { CoreModule } from './modules/core/core.module';
     AppRoutingModule,
     SharedModule,
     CompanyProfileModule,
-    CoreModule
+    CoreModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

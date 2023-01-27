@@ -25,10 +25,10 @@ export const initialState: CompanyProfileState = {
 export const companyProfileReducer = createReducer(
   initialState,
   on(fetch, (state) => ({...state, isLoading: true})),
-  on(fetchSuccess, (state, {companyProfile}) => ({...state, companyProfile, isLoading: false}) ),
+  on(fetchSuccess, (state, companyProfile) => {
+    console.log(companyProfile);
+    console.log({...state, companyProfile, isLoading: false});
+    return {...state, companyProfile, isLoading: false};
+   } ),
   on(fetchFailure, (state) => ({...state, isLoading: false}))
 );
-
-export function reducer(state: CompanyProfileState | undefined, action: Action){
-    return companyProfileReducer(state, action);
-}

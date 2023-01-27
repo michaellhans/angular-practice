@@ -11,10 +11,9 @@ export const fetch = createAction(
 
 export const fetchSuccess = createAction(
     COMPANY_PROFILE_FETCH_SUCCESS,
-    props<{companyProfile: CompanyProfile}>()
+    props<CompanyProfile>()
 )
 
 export const fetchFailure = createAction(
-    COMPANY_PROFILE_FETCH_FAILURE,
-    props<any>()
+    COMPANY_PROFILE_FETCH_FAILURE
 )

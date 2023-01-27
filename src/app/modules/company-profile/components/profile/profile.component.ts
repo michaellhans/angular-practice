@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CompanyProfile } from 'src/app/mock';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { CompanyProfileState } from '../../company-profile.reducer';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { fetch } from '../../company-profile.actions';
 
 @Component({
@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   companyProfile$: Observable<CompanyProfile>
 
   constructor(private store: Store<CompanyProfileState>){
-    this.companyProfile$ = this.store.select(state => state.companyProfile);
+    this.companyProfile$ = store.select(state => state.companyProfile);
   }
 
   ngOnInit(): void {
