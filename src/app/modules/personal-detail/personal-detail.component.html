@@ -1,18 +1,19 @@
-<div *ngIf="(personalDetail$ | async) as observable">
-    <h2>Data Perekrutan</h2>
-    <app-attribute-item [name]="'Jenis Kelamin'" [value]="observable.jenisKelamin"></app-attribute-item>
-    <div class="details">
-        <app-attribute-item [name]="'Tempat Lahir'" [value]="observable.tempatLahir"></app-attribute-item>
-        <app-attribute-item [name]="'Status Perkawinan'" [value]="observable.statusPerkawinan"></app-attribute-item>
-        <app-attribute-item [name]="'Ras'" [value]="observable.ras"></app-attribute-item>
-        <app-attribute-item [name]="'Pekerja Asing'" [value]="observable.pekerjaAsing"></app-attribute-item>
-        <app-attribute-item [name]="'Nomor Kartu Keluarga'" [value]="observable.nomorKartuKeluarga"></app-attribute-item>
-        <app-attribute-item [name]="'Lampiran'" [value]="observable.lampiran"></app-attribute-item>
-    </div>  
-    <div class="details">
-        <app-attribute-item [name]="'Tanggal Lahir'" [value]="observable.tanggalLahir"></app-attribute-item>
-        <app-attribute-item [name]="'Agama'" [value]="observable.agama"></app-attribute-item>
-        <app-attribute-item [name]="'Golongan Darah'" [value]="observable.golonganDarah"></app-attribute-item>
-        <app-attribute-item [name]="'Kewarganegaraan'" [value]="observable.kewarganegaraan"></app-attribute-item>
-    </div> 
-</div>
+<app-container name="Data Personal">
+    <div *ngIf="(personalDetail$ | async) as observable">
+        <app-attribute-item [name]="'Jenis Kelamin'" [value]="observable.jenisKelamin"></app-attribute-item>
+        <div class="details">
+            <app-attribute-item [name]="'Tempat Lahir'" [value]="observable.tempatLahir"></app-attribute-item>
+            <app-attribute-item [name]="'Status Perkawinan'" [value]="observable.statusPerkawinan"></app-attribute-item>
+            <app-attribute-item [name]="'Ras'" [value]="observable.ras"></app-attribute-item>
+            <app-attribute-item [name]="'Pekerja Asing'" [value]="observable.pekerjaAsing"></app-attribute-item>
+            <app-attribute-item [name]="'Nomor Kartu Keluarga'" [value]="observable.nomorKartuKeluarga"></app-attribute-item>
+            <app-attribute-item [name]="'Lampiran'" [value]="observable.lampiran"></app-attribute-item>
+        </div>  
+        <div class="details">
+            <app-attribute-item [name]="'Tanggal Lahir'" [value]="observable.tanggalLahir"></app-attribute-item>
+            <app-attribute-item [name]="'Agama'" [value]="observable.agama"></app-attribute-item>
+            <app-attribute-item [name]="'Golongan Darah'" [value]="observable.golonganDarah"></app-attribute-item>
+            <app-attribute-item [name]="'Kewarganegaraan'" [value]="observable.kewarganegaraan"></app-attribute-item>
+        </div> 
+    </div>
+</app-container>
