@@ -38,12 +38,12 @@ export const COMPANY_PROFILE =
 {
     id: 1,
     imgUrl: "../assets/gdp-labs.jpg",
-    name: "Michael Hans",
-    alamat: "Jalan Ganesha No. 10",
+    name: "GDP Labs",
+    alamat: "Jl. Dr. Otten No.10, Pasir Kaliki, Kec. Cicendo",
     kota: "Bandung",
     provinsi: "Jawa Barat",
     negara: "Indonesia",
-    kodepos: "40135",
+    kodepos: "40171",
     telepon: "081315678220"
 }
 

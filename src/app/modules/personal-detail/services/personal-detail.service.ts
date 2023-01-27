@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PersonalDetail, PERSONAL_DETAIL } from 'src/app/mock';
-import { MessageService } from '../shared/services/message.service';
+import { MessageService } from '../../shared/services/message.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmploymentDetailService {
+export class PersonalDetailService {
 
   constructor(private messageService: MessageService) { }
   

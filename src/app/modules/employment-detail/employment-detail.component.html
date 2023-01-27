@@ -1,14 +1,14 @@
-<div *ngIf="employmentDetail">
+<div *ngIf="(employmentDetail$ | async) as observable">
     <h2>Data Perekrutan</h2>
-    <app-attribute-item [name]="'NIK'" [value]="employmentDetail.nik"></app-attribute-item>
+    <app-attribute-item [name]="'NIK'" [value]="observable.nik"></app-attribute-item>
     <div class="details">
-        <app-attribute-item [name]="'Tanggal Bergabung'" [value]="employmentDetail.joinDate"></app-attribute-item>
-        <app-attribute-item [name]="'Lokasi Penerimaan'" [value]="employmentDetail.location"></app-attribute-item>
-        <app-attribute-item [name]="'Referensi Pekerjaan'" [value]="employmentDetail.reference"></app-attribute-item>
+        <app-attribute-item [name]="'Tanggal Bergabung'" [value]="observable.joinDate"></app-attribute-item>
+        <app-attribute-item [name]="'Lokasi Penerimaan'" [value]="observable.location"></app-attribute-item>
+        <app-attribute-item [name]="'Referensi Pekerjaan'" [value]="observable.reference"></app-attribute-item>
     </div>
     <div class="details">
-        <app-attribute-item [name]="'Tanggal Mulai'" [value]="employmentDetail.startDate"></app-attribute-item>
-        <app-attribute-item [name]="'Pengganti'" [value]="employmentDetail.pengganti"></app-attribute-item>
-        <app-attribute-item [name]="'Vendor'" [value]="employmentDetail.vendor"></app-attribute-item>
+        <app-attribute-item [name]="'Tanggal Mulai'" [value]="observable.startDate"></app-attribute-item>
+        <app-attribute-item [name]="'Pengganti'" [value]="observable.pengganti"></app-attribute-item>
+        <app-attribute-item [name]="'Vendor'" [value]="observable.vendor"></app-attribute-item>
     </div>   
 </div>

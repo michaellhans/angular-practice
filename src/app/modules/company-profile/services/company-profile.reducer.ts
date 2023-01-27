@@ -10,14 +10,14 @@ export interface CompanyProfileState {
 export const initialState: CompanyProfileState = {
     companyProfile: {
         id: 0,
-        imgUrl: "../assets/gdp-labs.jpg",
-        name: "Michael Hans",
-        alamat: "Jalan Ganesha No. 10",
-        kota: "Bandung",
-        provinsi: "Jawa Barat",
-        negara: "Indonesia",
-        kodepos: "40135",
-        telepon: "081315678220"
+        imgUrl: "",
+        name: "",
+        alamat: "",
+        kota: "",
+        provinsi: "",
+        negara: "",
+        kodepos: "",
+        telepon: ""
     },
     isLoading: false
 }

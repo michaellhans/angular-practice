@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { PersonalDetail } from 'src/app/mock';
-import { EmploymentDetailService } from './personal-detail.service';
+import { fetch } from './services/personal-detail.actions';
+import { selectPersonalDetail } from './services/personal-detail.reducer';
 
 @Component({
   selector: 'app-personal-detail',
@@ -9,15 +11,16 @@ import { EmploymentDetailService } from './personal-detail.service';
   styleUrls: ['./personal-detail.component.css']
 })
 export class PersonalDetailComponent {
-  personalDetail: PersonalDetail | undefined;
-  constructor(private route: ActivatedRoute, private employmentDetailService: EmploymentDetailService){}
+  personalDetail$: Observable<PersonalDetail>;
+  constructor(private store: Store){
+    this.personalDetail$ = store.select(selectPersonalDetail);
+  }
 
   ngOnInit(): void {
     this.getPersonalDetail();
   }
 
   getPersonalDetail(): void {
-    this.employmentDetailService.getPersonalDetail()
-      .subscribe(personalDetail => this.personalDetail = personalDetail);
+    this.store.dispatch(fetch());
   }
 }

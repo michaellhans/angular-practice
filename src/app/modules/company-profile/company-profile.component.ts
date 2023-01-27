@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CompanyProfile } from 'src/app/mock';
 import { map, Observable, tap } from 'rxjs';
-import { CompanyProfileState, selectCompanyProfile } from '../../company-profile.reducer';
+import { selectCompanyProfile } from './services/company-profile.reducer';
 import { select, Store } from '@ngrx/store';
-import { fetch } from '../../company-profile.actions';
+import { fetch } from './services/company-profile.actions';
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  templateUrl: './company-profile.component.html',
+  styleUrls: ['./company-profile.component.css']
 })
 export class ProfileComponent implements OnInit {
   companyProfile$: Observable<CompanyProfile>

@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, exhaustMap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import * as companyProfileAction from './company-profile.actions';
-import { CompanyProfileService } from './services/company-profile.service';
+import { CompanyProfileService } from './company-profile.service';
 
 @Injectable()
 export class CompanyProfileEffects {
