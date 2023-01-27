@@ -41,10 +41,10 @@ export const selectIsEdit = createSelector(
 export const personalDetailReducer = createReducer(
   initialState,
   on(fetch, (state) => ({...state, isLoading: true})),
-  on(fetchSuccess, (state, personalDetail) => ({...state, personalDetail, isLoading: false})),
+  on(fetchSuccess, (state, {personalDetail}) => ({...state, personalDetail, isLoading: false})),
   on(fetchFailure, (state) => ({...state, isLoading: false})),
   on(change, (state) => ({...state, isEdit: !state.isEdit})),
-  on(edit, (state) => ({...state, isLoading: true})),
-  on(editSuccess, (state, personalDetail) => ({...state, personalDetail, isLoading: false, isEdit: false})),
+  on(edit, (state, {personalDetail}) => ({...state, personalDetail, isLoading: true, isEdit: true})),
+  on(editSuccess, (state) => ({...state, isLoading: false, isEdit: false})),
   on(editFailure, (state) => ({...state, isLoading: false, isEdit: false}))
 );

@@ -11,7 +11,7 @@ export const fetch = createAction(
 
 export const fetchSuccess = createAction(
     EMPLOYMENT_DETAIL_FETCH_SUCCESS,
-    props<EmploymentDetail>()
+    props<{employmentDetail: EmploymentDetail}>()
 )
 
 export const fetchFailure = createAction(

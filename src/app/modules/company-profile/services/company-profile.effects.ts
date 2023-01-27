@@ -18,7 +18,7 @@ export class CompanyProfileEffects {
       ofType(companyProfileAction.fetch),
       exhaustMap(() =>
         this.companyProfileService.getCompanyProfile().pipe(
-          map(response => companyProfileAction.fetchSuccess(response)),
+          map(response => companyProfileAction.fetchSuccess({companyProfile: response})),
           catchError(() => of(companyProfileAction.fetchFailure)))
       )
     )

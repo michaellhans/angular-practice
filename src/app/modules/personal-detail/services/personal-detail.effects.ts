@@ -4,6 +4,7 @@ import { map, exhaustMap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import * as personalDetailAction from './personal-detail.actions';
 import { PersonalDetailService } from './personal-detail.service';
+import { PersonalDetail } from 'src/app/mock';
 
 @Injectable()
 export class PersonalDetailEffects {
@@ -18,9 +19,20 @@ export class PersonalDetailEffects {
       ofType(personalDetailAction.fetch),
       exhaustMap(() =>
         this.personalDetailService.getPersonalDetail().pipe(
-          map(response => personalDetailAction.fetchSuccess(response)),
+          map(response => personalDetailAction.fetchSuccess({personalDetail: response})),
           catchError(() => of(personalDetailAction.fetchFailure)))
       )
     )
+  );
+
+  personalDetailUpdate$ = createEffect(() =>
+  this.actions$.pipe(
+    ofType(personalDetailAction.edit),
+    exhaustMap((action) =>
+      this.personalDetailService.updatePersonalDetail(action.personalDetail).pipe(
+        map(response => personalDetailAction.editSuccess()),
+        catchError(() => of(personalDetailAction.editFailure)))
+    )
+  )
   );
 }

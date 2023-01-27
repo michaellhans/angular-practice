@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { PersonalDetail } from 'src/app/mock';
-import { change, editSuccess, fetch } from './services/personal-detail.actions';
+import { change, edit, fetch } from './services/personal-detail.actions';
 import { selectIsEdit, selectPersonalDetail } from './services/personal-detail.reducer';
 
 @Component({
@@ -34,6 +34,6 @@ export class PersonalDetailComponent {
   }
 
   onSubmit(event: PersonalDetail){
-    this.store.dispatch(editSuccess(event));
+    this.store.dispatch(edit({personalDetail: event}));
   }
 }

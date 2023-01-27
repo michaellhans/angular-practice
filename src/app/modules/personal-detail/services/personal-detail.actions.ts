@@ -15,7 +15,7 @@ export const fetch = createAction(
 
 export const fetchSuccess = createAction(
     PERSONAL_DETAIL_FETCH_SUCCESS,
-    props<PersonalDetail>()
+    props<{personalDetail: PersonalDetail}>()
 )
 
 export const fetchFailure = createAction(
@@ -27,12 +27,12 @@ export const change = createAction(
 )
 
 export const edit = createAction(
-    PERSONAL_DETAIL_EDIT
+    PERSONAL_DETAIL_EDIT,
+    props<{personalDetail: PersonalDetail}>()
 )
 
 export const editSuccess = createAction(
-    PERSONAL_DETAIL_EDIT_SUCCESS,
-    props<PersonalDetail>()
+    PERSONAL_DETAIL_EDIT_SUCCESS
 )
 
 export const editFailure = createAction(

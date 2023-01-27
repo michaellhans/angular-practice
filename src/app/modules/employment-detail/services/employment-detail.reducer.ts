@@ -30,6 +30,6 @@ export const selectEmploymentDetail = createSelector(
 export const employmentDetailReducer = createReducer(
   initialState,
   on(fetch, (state) => ({...state, isLoading: true})),
-  on(fetchSuccess, (state, employmentDetail) => ({...state, employmentDetail, isLoading: false})),
+  on(fetchSuccess, (state, {employmentDetail}) => ({...state, employmentDetail, isLoading: false})),
   on(fetchFailure, (state) => ({...state, isLoading: false}))
 );

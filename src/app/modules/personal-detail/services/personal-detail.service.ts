@@ -15,4 +15,10 @@ export class PersonalDetailService {
     this.messageService.add('Personal Detail Service: fetched Personal Detail');
     return employmentDetail;
   }
+
+  updatePersonalDetail(personalDetail: PersonalDetail): Observable<PersonalDetail> {
+    localStorage.setItem("personalDetail", JSON.stringify(personalDetail));
+    console.log(personalDetail);
+    return of(personalDetail);
+  }
 }

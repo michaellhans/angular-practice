@@ -32,6 +32,6 @@ export const selectCompanyProfile = createSelector(
 export const companyProfileReducer = createReducer(
   initialState,
   on(fetch, (state) => ({...state, isLoading: true})),
-  on(fetchSuccess, (state, companyProfile) => ({...state, companyProfile, isLoading: false})),
+  on(fetchSuccess, (state, {companyProfile}) => ({...state, companyProfile, isLoading: false})),
   on(fetchFailure, (state) => ({...state, isLoading: false}))
 );

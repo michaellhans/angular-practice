@@ -18,7 +18,7 @@ export class EmploymentDetailEffects {
       ofType(employmentDetailAction.fetch),
       exhaustMap(() =>
         this.employmentDetailService.getEmploymentDetail().pipe(
-          map(response => employmentDetailAction.fetchSuccess(response)),
+          map(response => employmentDetailAction.fetchSuccess({employmentDetail: response})),
           catchError(() => of(employmentDetailAction.fetchFailure)))
       )
     )
