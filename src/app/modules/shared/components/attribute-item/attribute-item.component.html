@@ -1,2 +1,7 @@
-<h4>{{name}}</h4>
+<div>
+    <h4 [popoverTitle]="name"
+        popover="Input disini"
+        placement="right"
+        [outsideClick]="true">{{name}}</h4>
+</div>
 <p>{{value}}</p>

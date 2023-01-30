@@ -11,14 +11,21 @@ export class PersonalDetailService {
   constructor(private messageService: MessageService) { }
   
   getPersonalDetail(): Observable<PersonalDetail> {
-    const employmentDetail = of(PERSONAL_DETAIL);
-    this.messageService.add('Personal Detail Service: fetched Personal Detail');
-    return employmentDetail;
+    let rawPersonalDetail = localStorage.getItem("personalDetail");
+    let personalDetail = null;
+    if (!rawPersonalDetail){
+      personalDetail = of(PERSONAL_DETAIL);
+      this.messageService.add('Personal Detail Service: fetched Personal Detail from Server');
+    } else {
+      personalDetail = of(JSON.parse(rawPersonalDetail));
+      this.messageService.add('Personal Detail Service: fetched Personal Detail from Local Storage');
+    }
+    return personalDetail;
   }
 
   updatePersonalDetail(personalDetail: PersonalDetail): Observable<PersonalDetail> {
     localStorage.setItem("personalDetail", JSON.stringify(personalDetail));
-    console.log(personalDetail);
+    console.log(localStorage.getItem("personalDetail"));
     return of(personalDetail);
   }
 }

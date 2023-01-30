@@ -8,11 +8,12 @@ import { ContainerComponent } from './components/container/container.component';
 import { MatListModule } from '@angular/material/list';
 import { AttributeItemFormComponent } from './components/attribute-item-form/attribute-item-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PopoverModule } from 'ngx-bootstrap/popover';
 
 @NgModule({
   declarations: [AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent, ContainerComponent],
   imports: [
-    CommonModule, RouterModule, MatListModule, FormsModule, ReactiveFormsModule
+    CommonModule, RouterModule, MatListModule, FormsModule, ReactiveFormsModule, PopoverModule
   ],
   exports: [ RouterModule, CommonModule, MatListModule, FormsModule, ReactiveFormsModule, AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent ]
 })

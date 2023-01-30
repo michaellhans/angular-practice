@@ -28,7 +28,7 @@ export interface PersonalDetail {
     pekerjaAsing: string;
     nomorKartuKeluarga: string;
     lampiran: string;
-    tanggalLahir: string;
+    tanggalLahir: Date;
     agama: string;
     golonganDarah: string;
     kewarganegaraan: string;
@@ -65,7 +65,7 @@ export const PERSONAL_DETAIL = {
     pekerjaAsing: "Tidak",
     nomorKartuKeluarga: "123123123123455",
     lampiran: "image(3).png",
-    tanggalLahir: "06 Apr 1994",
+    tanggalLahir: new Date("1994-04-06"),
     agama: "Catholicism",
     golonganDarah: "B",
     kewarganegaraan: "Indonesia",

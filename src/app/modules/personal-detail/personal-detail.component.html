@@ -3,31 +3,35 @@
         <div *ngIf="(isEdit$ | async) as observableEdit; else editMode">
             <form #personalDetailForm="ngForm" (submit)="onSubmit(personalDetailForm.value)">
                 <h4>Jenis Kelamin</h4>
-                <input type="text" name="jenisKelamin" [ngModel]="observable.jenisKelamin">
+                <input type="text" class="form-control" name="jenisKelamin" [ngModel]="observable.jenisKelamin">
                 <div class="general">
                     <div class="details">
                         <h4>Tempat Lahir</h4>
-                        <input type="text" name="tempatLahir" [ngModel]="observable.tempatLahir">
+                        <input type="text" class="form-control" name="tempatLahir" [ngModel]="observable.tempatLahir">
                         <h4>Status Perkawinan</h4>
-                        <input type="text" name="statusPerkawinan" [ngModel]="observable.statusPerkawinan">
+                        <input type="text" class="form-control" name="statusPerkawinan" [ngModel]="observable.statusPerkawinan">
                         <h4>Ras</h4>
-                        <input type="text" name="ras" [ngModel]="observable.ras">
+                        <input type="text" class="form-control" name="ras" [ngModel]="observable.ras">
                         <h4>Pekerja Asing</h4>
-                        <input type="text" name="pekerjaAsing" [ngModel]="observable.pekerjaAsing">
+                        <input type="text" class="form-control" name="pekerjaAsing" [ngModel]="observable.pekerjaAsing">
                         <h4>Nomor Kartu Keluarga</h4>
-                        <input type="text" name="nomorKartuKeluarga" [ngModel]="observable.nomorKartuKeluarga">
+                        <input type="text" class="form-control" name="nomorKartuKeluarga" [ngModel]="observable.nomorKartuKeluarga">
                         <h4>Lampiran</h4>
-                        <input type="text" name="lampiran" [ngModel]="observable.lampiran">
+                        <input type="text" class="form-control" name="lampiran" [ngModel]="observable.lampiran">
                     </div>  
                     <div class="details">
                         <h4>Tanggal Lahir</h4>
-                        <input type="text" name="tanggalLahir" [ngModel]="observable.tanggalLahir">
+                        <input type="text" class="form-control" name="tanggalLahir" [ngModel]="observable.tanggalLahir"
+                            bsDatepicker
+                            [bsValue]="observable.tanggalLahir"
+                            [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }"
+                            >
                         <h4>Agama</h4>
-                        <input type="text" name="agama" [ngModel]="observable.agama">
+                        <input type="text" class="form-control" name="agama" [ngModel]="observable.agama">
                         <h4>Golongan Darah</h4>
-                        <input type="text" name="golonganDarah" [ngModel]="observable.golonganDarah">
+                        <input type="text" class="form-control" name="golonganDarah" [ngModel]="observable.golonganDarah">
                         <h4>Kewarganegaraan</h4>
-                        <input type="text" name="kewarganegaraan" [ngModel]="observable.kewarganegaraan">
+                        <input type="text" class="form-control" name="kewarganegaraan" [ngModel]="observable.kewarganegaraan">
                     </div>
                 </div>
                 <button class="form-button" type="submit">Submit</button>
@@ -46,7 +50,7 @@
                     <app-attribute-item [name]="'Lampiran'" [value]="observable.lampiran"></app-attribute-item>
                 </div>  
                 <div class="details">
-                    <app-attribute-item [name]="'Tanggal Lahir'" [value]="observable.tanggalLahir"></app-attribute-item>
+                    <app-attribute-item [name]="'Tanggal Lahir'" [value]="dateToString(observable.tanggalLahir)"></app-attribute-item>
                     <app-attribute-item [name]="'Agama'" [value]="observable.agama"></app-attribute-item>
                     <app-attribute-item [name]="'Golongan Darah'" [value]="observable.golonganDarah"></app-attribute-item>
                     <app-attribute-item [name]="'Kewarganegaraan'" [value]="observable.kewarganegaraan"></app-attribute-item>

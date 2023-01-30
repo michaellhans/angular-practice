@@ -17,7 +17,7 @@ export const initialState: PersonalDetailState = {
         pekerjaAsing: "",
         nomorKartuKeluarga: "",
         lampiran: "",
-        tanggalLahir: "",
+        tanggalLahir: new Date(),
         agama: "",
         golonganDarah: "",
         kewarganegaraan: "",

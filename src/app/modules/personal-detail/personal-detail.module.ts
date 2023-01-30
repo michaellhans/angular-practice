@@ -7,6 +7,8 @@ import { personalDetailReducer } from './services/personal-detail.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { PersonalDetailEffects } from './services/personal-detail.effects';
 import { FormsModule } from '@angular/forms';
+import { BsDatepickerConfig, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     PersonalDetailRoutingModule,
     StoreModule.forFeature('personalDetail', personalDetailReducer),
     EffectsModule.forFeature([PersonalDetailEffects]),
-    FormsModule
-  ]
+    FormsModule,
+    BsDatepickerModule.forRoot(),
+  ],
+  providers: [BsDatepickerConfig, DatePipe]
 })
 export class PersonalDetailModule { }

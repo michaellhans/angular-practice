@@ -16,6 +16,10 @@ input {
     margin-bottom: 30px;
 }
 
+.form-control {
+    width: 200px;
+}
+
 .form-button {
     margin: 10px;
 }

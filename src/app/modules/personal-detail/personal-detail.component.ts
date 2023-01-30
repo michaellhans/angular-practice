@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { PersonalDetail } from 'src/app/mock';
 import { change, edit, fetch } from './services/personal-detail.actions';
 import { selectIsEdit, selectPersonalDetail } from './services/personal-detail.reducer';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-personal-detail',
@@ -16,7 +17,7 @@ export class PersonalDetailComponent {
   isEdit$: Observable<boolean>;
   @ViewChild('personalDetailForm') personalDetailForm: NgForm | null = null;
 
-  constructor(private store: Store){
+  constructor(private store: Store, public datePipe: DatePipe){
     this.personalDetail$ = store.select(selectPersonalDetail);
     this.isEdit$ = store.select(selectIsEdit);
   }
@@ -33,7 +34,15 @@ export class PersonalDetailComponent {
     this.store.dispatch(change());
   }
 
+  onChange(event: PersonalDetail){
+    console.log(event);
+  }
+
   onSubmit(event: PersonalDetail){
     this.store.dispatch(edit({personalDetail: event}));
+  }
+
+  dateToString(date: Date): string {
+    return this.datePipe.transform(new Date(date), 'yyyy-MM-dd')!;
   }
 }
