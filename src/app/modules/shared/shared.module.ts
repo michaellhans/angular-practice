@@ -15,6 +15,6 @@ import { PopoverModule } from 'ngx-bootstrap/popover';
   imports: [
     CommonModule, RouterModule, MatListModule, FormsModule, ReactiveFormsModule, PopoverModule
   ],
-  exports: [ RouterModule, CommonModule, MatListModule, FormsModule, ReactiveFormsModule, AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent ]
+  exports: [ PopoverModule, RouterModule, CommonModule, MatListModule, FormsModule, ReactiveFormsModule, AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent ]
 })
 export class SharedModule { }

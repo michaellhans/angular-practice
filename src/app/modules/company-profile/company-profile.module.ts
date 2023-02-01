@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { companyProfileReducer } from './services/company-profile.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { CompanyProfileEffects } from './services/company-profile.effects';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [ ProfileComponent ],
@@ -13,7 +14,8 @@ import { CompanyProfileEffects } from './services/company-profile.effects';
     SharedModule,
     CompanyProfileRoutingModule,
     StoreModule.forFeature("companyProfile", companyProfileReducer),
-    EffectsModule.forFeature([CompanyProfileEffects])
+    EffectsModule.forFeature([CompanyProfileEffects]),
+    CarouselModule
   ]
 })
 export class CompanyProfileModule { }
