@@ -1,0 +1,5 @@
+{
+    "company-profile": "http://localhost:4201/remoteEntry.js",
+    "employment-detail": "http://localhost:4202/remoteEntry.js",
+    "personal-detail": "http://localhost:4203/remoteEntry.js"
+}
