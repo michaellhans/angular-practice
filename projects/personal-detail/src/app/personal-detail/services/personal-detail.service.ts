@@ -3,9 +3,7 @@ import { Observable, of } from 'rxjs';
 import { PersonalDetail, PERSONAL_DETAIL } from 'projects/shell/src/app/mock';
 import { MessageService } from 'shared';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PersonalDetailService {
 
   constructor(private messageService: MessageService) { }
