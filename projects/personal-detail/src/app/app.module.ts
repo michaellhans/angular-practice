@@ -6,7 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonalDetailModule } from './personal-detail/personal-detail.module';
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from 'shared';
 
 @NgModule({
   declarations: [

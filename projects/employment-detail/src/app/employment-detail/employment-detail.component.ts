@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { EmploymentDetail } from 'src/app/mock';
+import { EmploymentDetail } from 'projects/shell/src/app/mock';
 import { selectEmploymentDetail } from './services/employment-detail.reducer';
 import { fetch } from './services/employment-detail.actions';
 

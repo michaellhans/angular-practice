@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { EmploymentDetail, EMPLOYMENT_DETAIL } from 'src/app/mock';
-import { MessageService } from '../../shared/services/message.service';
+import { EmploymentDetail, EMPLOYMENT_DETAIL } from 'projects/shell/src/app/mock';
+import { MessageService } from 'shared';
 
 @Injectable({
   providedIn: 'root'

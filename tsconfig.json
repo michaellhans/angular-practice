@@ -17,7 +17,8 @@
     "importHelpers": true,
     "paths": {
       "shared": [
-        "dist/shared"
+        // "dist/shared"
+        "projects/shared/src/public-api.ts"
       ]
     },
     "target": "ES2022",

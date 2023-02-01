@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PersonalDetail, PERSONAL_DETAIL } from 'projects/shell/src/app/mock';
-import { MessageService } from '../../shared/services/message.service';
+import { MessageService } from 'shared';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,7 @@ export class PersonalDetailService {
   updatePersonalDetail(personalDetail: PersonalDetail): Observable<PersonalDetail> {
     localStorage.setItem("personalDetail", JSON.stringify(personalDetail));
     console.log(localStorage.getItem("personalDetail"));
+    this.messageService.add('Personal Detail Service: updated Personal Detail and save it to Local Storage');
     return of(personalDetail);
   }
 }

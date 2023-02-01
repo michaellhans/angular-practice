@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { CompanyProfile } from 'src/app/mock';
+import { CompanyProfile } from 'projects/shell/src/app/mock';
 
 export const COMPANY_PROFILE_FETCH = '[Company Profile] Fetch';
 export const COMPANY_PROFILE_FETCH_SUCCESS = '[Company Profile] Fetch Success';
