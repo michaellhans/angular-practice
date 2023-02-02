@@ -1,12 +1,13 @@
-.menu {
-    flex: 50%;
-    padding: 20px;
-    margin: 2% 5%;
-    border: 2px solid black;
-    border-radius: 30px;
-}
-
 .general {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+.menu {
+    flex: 0 45%;
+    padding: 20px;
+    margin: 2% 2.5%;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
 }

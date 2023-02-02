@@ -9,12 +9,13 @@ import { MatListModule } from '@angular/material/list';
 import { AttributeItemFormComponent } from './components/attribute-item-form/attribute-item-form.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PopoverModule } from 'ngx-bootstrap/popover';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent, ContainerComponent],
   imports: [
     CommonModule, RouterModule, MatListModule, FormsModule, ReactiveFormsModule, PopoverModule
   ],
-  exports: [ PopoverModule, RouterModule, CommonModule, MatListModule, FormsModule, ReactiveFormsModule, AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent ]
+  exports: [ BrowserAnimationsModule, PopoverModule, RouterModule, CommonModule, MatListModule, FormsModule, ReactiveFormsModule, AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent ]
 })
 export class SharedModule { }
