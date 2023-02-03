@@ -2,10 +2,10 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
 
-  name: 'company-profile',
+  name: 'personal-note',
 
   exposes: {
-    './Module': './projects/company-profile/src/app/company-profile/company-profile.module.ts',
+    './Module': './projects/personal-note/src/app/personal-note/personal-note.module.ts',
   },
 
   shared: {

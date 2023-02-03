@@ -1,0 +1,16 @@
+<app-container name="Personal Note">
+    <div >
+        <div class="general">
+            <div class="details">
+                <app-attribute-item [name]="'Nama'" [value]="'Michael Hans'"></app-attribute-item>
+                <app-attribute-item [name]="'NIM'" [value]="'23522011'"></app-attribute-item>
+                <quill-editor   [(ngModel)]="htmlText"
+                                placeholder="Enter Text"
+                                [modules]="quillConfig"
+                                (onSelectionChanged)="onSelectionChanged($event)"
+                                (onContentChanged)="onContentChanged($event)">
+                </quill-editor>
+            </div> 
+        </div>
+    </div>
+</app-container>

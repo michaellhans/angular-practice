@@ -442,6 +442,107 @@
 					}
 				}
 			}
+		},
+		"personal-note": {
+			"projectType": "application",
+			"schematics": {},
+			"root": "projects/personal-note",
+			"sourceRoot": "projects/personal-note/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/personal-note",
+						"index": "projects/personal-note/src/index.html",
+						"main": "projects/personal-note/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/personal-note/tsconfig.app.json",
+						"assets": [
+							"projects/personal-note/src/favicon.ico",
+							"projects/personal-note/src/assets"
+						],
+						"styles": [
+							"projects/personal-note/src/styles.css"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/personal-note/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/personal-note/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "personal-note:build:production",
+							"extraWebpackConfig": "projects/personal-note/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "personal-note:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4204,
+						"publicHost": "http://localhost:4204",
+						"extraWebpackConfig": "projects/personal-note/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "personal-note:build",
+						"extraWebpackConfig": "projects/personal-note/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/personal-note/tsconfig.spec.json",
+						"assets": [
+							"projects/personal-note/src/favicon.ico",
+							"projects/personal-note/src/assets"
+						],
+						"styles": [
+							"projects/personal-note/src/styles.css"
+						],
+						"scripts": []
+					}
+				}
+			}
 		}
 	},
 	"cli": {
