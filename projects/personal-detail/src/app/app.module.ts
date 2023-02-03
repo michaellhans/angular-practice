@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonalDetailModule } from './personal-detail/personal-detail.module';
 import { MessageService, SharedModule } from 'shared';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import { MessageService, SharedModule } from 'shared';
   imports: [
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
-    PersonalDetailModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    PersonalDetailModule,
     AppRoutingModule,
     SharedModule
   ],
