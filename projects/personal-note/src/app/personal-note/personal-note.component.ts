@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import 'quill-mention';
+import 'quill-emoji';
 
 @Component({
   selector: 'app-personal-note',
@@ -6,9 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./personal-note.component.css']
 })
 export class PersonalNoteComponent {
-  htmlText ="<p>Testing</p>"
+  htmlText ="<p>My Personal Note</p>"
   hasFocus = false;
   subject: string = '';
+  editMode = false;
 
   atValues = [
     { id: 1, value: 'Fredrik Sundqvist', link: 'https://google.com' },
@@ -19,7 +22,7 @@ export class PersonalNoteComponent {
     { id: 4, value: 'Patrik Sjölin 2' }
   ]
 
-  quillConfig={
+  quillConfig = {
     //toolbar: '.toolbar',
     toolbar: {
       container: [
@@ -115,5 +118,8 @@ export class PersonalNoteComponent {
   }
   onBlur = () =>{
     console.log("Blurred");
+  }
+  changeMode = () => {
+    this.editMode = !this.editMode;
   }
 }
