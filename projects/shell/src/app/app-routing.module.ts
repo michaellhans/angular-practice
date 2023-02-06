@@ -11,9 +11,9 @@ const routes: Routes = [
     path: 'company-profile',
     loadChildren: () => loadRemoteModule({
       type: 'manifest',
-      remoteName: 'company-profile',
-      exposedModule: './Module'
-    }).then(m => m.CompanyProfileModule)
+      remoteName: 'company-profile', // remote app name
+      exposedModule: './Module'      // exposed module, following the remote webpack.config.js
+    }).then(m => m.CompanyProfileModule) // the module that wanted to be used
   },
   { 
     path: 'employment-detail',
@@ -38,6 +38,11 @@ const routes: Routes = [
       remoteName: 'personal-note',
       exposedModule: './Module'
     }).then(m => m.PersonalNoteModule)
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];
 
