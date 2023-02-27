@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class MessageService {
-  messages: string[] = [];
+  messages: string[] = ['This is the first line'];
 
   add(message: string) {
     console.log(message);

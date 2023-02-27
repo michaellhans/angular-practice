@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PersonalNoteComponent } from './personal-note.component';
-import { MessageService, SharedModule } from 'shared';
+import { SharedModule } from 'shared/shared.module';
 import { PersonalNoteRoutingModule } from './personal-note-routing-module';
 import { QuillModule } from 'ngx-quill'
 
@@ -13,6 +13,6 @@ import { QuillModule } from 'ngx-quill'
     PersonalNoteRoutingModule,
     QuillModule.forRoot()
   ],
-  providers: [MessageService]
+  providers: []
 })
 export class PersonalNoteModule { }

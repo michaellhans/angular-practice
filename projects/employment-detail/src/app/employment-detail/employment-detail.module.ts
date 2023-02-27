@@ -19,6 +19,6 @@ import { EmploymentDetailService } from './services/employment-detail.service';
     StoreModule.forFeature('employmentDetail', employmentDetailReducer),
     EffectsModule.forFeature([EmploymentDetailEffects])
   ],
-  providers: [MessageService, EmploymentDetailService]
+  providers: [EmploymentDetailService]
 })
 export class EmploymentDetailModule { }

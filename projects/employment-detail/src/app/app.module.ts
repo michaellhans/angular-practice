@@ -23,7 +23,7 @@ import { EmploymentDetailModule } from './employment-detail/employment-detail.mo
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [MessageService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

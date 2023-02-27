@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { MessageService, SharedModule } from 'shared';
+import { SharedModule } from 'shared/shared.module';
+import { MessageService } from 'shared/services/message.service';
 import { CompanyProfileRoutingModule } from './company-profile-routing.module';
 import { ProfileComponent } from './company-profile.component';
 import { StoreModule } from '@ngrx/store';
@@ -18,6 +19,6 @@ import { CompanyProfileService } from './services/company-profile.service';
     EffectsModule.forFeature([CompanyProfileEffects]),
     CarouselModule
   ],
-  providers: [MessageService, CompanyProfileService]
+  providers: [CompanyProfileService]
 })
 export class CompanyProfileModule { }
