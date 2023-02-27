@@ -16,8 +16,8 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "shared": [
-        "projects/shared/src/public-api.ts"
+      "shared/*": [
+        "projects/shared/src/lib/*"
       ]
     },
     "target": "ES2022",

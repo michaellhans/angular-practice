@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { MessageService, SharedModule } from 'shared';
+import { SharedModule } from 'shared/shared.module';
+import { MessageService } from 'shared/services/message.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
