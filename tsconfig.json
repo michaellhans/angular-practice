@@ -16,7 +16,7 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "shared/*": [
+      "~shared/*": [
         "projects/shared/src/lib/*"
       ]
     },

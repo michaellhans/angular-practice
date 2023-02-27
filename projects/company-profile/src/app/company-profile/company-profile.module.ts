@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from 'shared/shared.module';
-import { MessageService } from 'shared/services/message.service';
+import { SharedModule } from '~shared/shared.module';
+import { MessageService } from '~shared/services/message.service';
 import { CompanyProfileRoutingModule } from './company-profile-routing.module';
 import { ProfileComponent } from './company-profile.component';
 import { StoreModule } from '@ngrx/store';
