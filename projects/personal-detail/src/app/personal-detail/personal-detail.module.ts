@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PersonalDetailComponent } from './personal-detail.component';
-import { SharedModule } from '~shared/shared.module';
-import { MessageService } from '~shared/services/message.service';
+import { SharedModule } from '~shared';
+import { MessageService } from '~shared';
 import { PersonalDetailRoutingModule } from './personal-detail-routing-module';
 import { StoreModule } from '@ngrx/store';
 import { personalDetailReducer } from './services/personal-detail.reducer';

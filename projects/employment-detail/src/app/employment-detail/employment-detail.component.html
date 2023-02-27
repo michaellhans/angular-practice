@@ -1,5 +1,6 @@
 <app-container name="Data Perekrutan" *ngIf="(employmentDetail$ | async) as observable">
-    <div >
+    <div>User: {{user}}</div>
+    <div>
         <app-attribute-item [name]="'NIK'" [value]="observable.nik"></app-attribute-item>
         <div class="general">
             <div class="details">

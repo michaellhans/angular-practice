@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonalNoteModule } from './personal-note/personal-note.module';
-import { SharedModule } from '~shared/shared.module';
-import { MessageService } from '~shared/services/message.service';
+import { SharedModule } from '~shared';
+import { MessageService } from '~shared';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({

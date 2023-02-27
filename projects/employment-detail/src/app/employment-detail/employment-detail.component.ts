@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { EmploymentDetail } from 'projects/shell/src/app/mock';
 import { selectEmploymentDetail } from './services/employment-detail.reducer';
 import { fetch } from './services/employment-detail.actions';
+import { AuthLibService } from '~shared';
 
 @Component({
   selector: 'app-employment-detail',
@@ -12,8 +13,9 @@ import { fetch } from './services/employment-detail.actions';
 })
 export class EmploymentDetailComponent {
   employmentDetail$: Observable<EmploymentDetail>;
+  user = this.service.user;
 
-  constructor(private store: Store){
+  constructor(private store: Store, private service: AuthLibService){
     this.employmentDetail$ = store.pipe(select(selectEmploymentDetail));
   }
 
