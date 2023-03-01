@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CompanyProfile, COMPANY_PROFILE } from 'projects/shell/src/app/mock';
+import { CompanyProfile, COMPANY_PROFILE } from '~libs';
 import { Observable, of } from 'rxjs';
 import { MessageService } from '~shared';
 

@@ -16,6 +16,9 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
+      "~libs": [
+        "projects/libs/src/public-api.ts"
+      ],
       "~shared": [
         "projects/shared/src/public-api.ts"
       ]

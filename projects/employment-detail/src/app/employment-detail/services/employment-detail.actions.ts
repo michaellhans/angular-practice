@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { EmploymentDetail } from 'projects/shell/src/app/mock';
+import { EmploymentDetail } from '~libs';
 
 export const EMPLOYMENT_DETAIL_FETCH = '[Employment Detail] Fetch';
 export const EMPLOYMENT_DETAIL_FETCH_SUCCESS = '[Employment Detail] Fetch Success';

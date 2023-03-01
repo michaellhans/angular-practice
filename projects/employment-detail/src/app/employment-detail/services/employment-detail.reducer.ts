@@ -1,5 +1,5 @@
 import { createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
-import { EmploymentDetail } from 'projects/shell/src/app/mock';
+import { EmploymentDetail } from '~libs';
 import { fetch, fetchFailure, fetchSuccess } from './employment-detail.actions';
 
 export interface EmploymentDetailState {

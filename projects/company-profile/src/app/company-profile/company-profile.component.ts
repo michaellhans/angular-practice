@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CompanyProfile } from 'projects/shell/src/app/mock';
+import { CompanyProfile } from '~libs';
 import { map, Observable, tap } from 'rxjs';
 import { selectCompanyProfile } from './services/company-profile.reducer';
 import { select, Store } from '@ngrx/store';

@@ -1,17 +1,53 @@
-const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const mf = require("@angular-architects/module-federation/webpack");
+const path = require("path");
 
-module.exports = withModuleFederationPlugin({
+const shareAll = mf.shareAll;
+const sharedMappings = new mf.SharedMappings();
+sharedMappings.register(
+  path.join(__dirname, '../../tsconfig.json'),
+  ['~shared']
+);
 
-  name: 'company-profile',
-
-  exposes: {
-    './Module': './projects/company-profile/src/app/company-profile/company-profile.module.ts',
+module.exports = {
+  output: {
+    uniqueName: "companyProfile",
+    publicPath: "auto",
+    scriptType: 'text/javascript'
   },
-
-  shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+  optimization: {
+    runtimeChunk: false
+  },   
+  resolve: {
+    alias: {
+      ...sharedMappings.getAliases(),
+    }
   },
-
-   
-
-});
+  experiments: {
+    outputModule: true
+  },
+  plugins: [
+    new ModuleFederationPlugin({
+        library: { type: "module" },
+      
+        // For remotes (please adjust)
+        name: "companyProfile",
+        filename: "remoteEntry.js",
+        exposes: {
+            './Module': './projects/company-profile/src/app/company-profile/company-profile.module.ts'
+        },        
+        
+        shared: {
+          ...shareAll({
+            singleton: true,
+            strictVersion: true,
+            requiredVersion: 'auto',
+            eager: true
+          }),
+          ...sharedMappings.getDescriptors()
+        }
+        
+    }),
+    sharedMappings.getPlugin()
+  ],
+};

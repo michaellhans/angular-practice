@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { PersonalDetail } from 'projects/shell/src/app/mock';
+import { PersonalDetail } from '~libs';
 
 export const PERSONAL_DETAIL_FETCH = '[Personal Detail] Fetch';
 export const PERSONAL_DETAIL_FETCH_SUCCESS = '[Personal Detail] Fetch Success';

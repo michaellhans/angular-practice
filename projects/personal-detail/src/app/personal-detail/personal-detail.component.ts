@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { PersonalDetail } from 'projects/shell/src/app/mock';
+import { PersonalDetail } from '~libs';
 import { change, edit, fetch } from './services/personal-detail.actions';
 import { selectIsEdit, selectPersonalDetail } from './services/personal-detail.reducer';
 import { DatePipe } from '@angular/common';

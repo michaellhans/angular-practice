@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { PersonalDetail, PERSONAL_DETAIL } from 'projects/shell/src/app/mock';
+import { PersonalDetail, PERSONAL_DETAIL } from '~libs';
 import { MessageService } from '~shared';
 
 @Injectable()

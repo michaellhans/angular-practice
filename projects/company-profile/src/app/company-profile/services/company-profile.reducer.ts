@@ -1,5 +1,5 @@
 import { Action, createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
-import { CompanyProfile } from 'projects/shell/src/app/mock';
+import { CompanyProfile } from '~libs';
 import { fetch, fetchFailure, fetchSuccess } from './company-profile.actions';
 
 export interface CompanyProfileState {

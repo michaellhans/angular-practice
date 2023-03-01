@@ -1,5 +1,5 @@
 import { createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
-import { PersonalDetail } from 'projects/shell/src/app/mock';
+import { PersonalDetail } from '~libs';
 import { fetch, fetchFailure, fetchSuccess, edit, editFailure, editSuccess, change } from './personal-detail.actions';
 
 export interface PersonalDetailState {

@@ -10,32 +10,32 @@ const routes: Routes = [
   { 
     path: 'company-profile',
     loadChildren: () => loadRemoteModule({
-      type: 'manifest',
-      remoteName: 'company-profile', // remote app name
+      remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      remoteName: 'companyProfile',
       exposedModule: './Module'      // exposed module, following the remote webpack.config.js
     }).then(m => m.CompanyProfileModule) // the module that wanted to be used
   },
   { 
     path: 'employment-detail',
     loadChildren: () => loadRemoteModule({
-      type: 'manifest',
-      remoteName: 'employment-detail',
+      remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      remoteName: 'employmentDetail',
       exposedModule: './Module'
     }).then(m => m.EmploymentDetailModule)
   },
   { 
     path: 'personal-detail',
     loadChildren: () => loadRemoteModule({
-      type: 'manifest',
-      remoteName: 'personal-detail',
+      remoteEntry: 'http://localhost:4203/remoteEntry.js',
+      remoteName: 'personalDetail',
       exposedModule: './Module'
     }).then(m => m.PersonalDetailModule)
   },
   { 
     path: 'personal-note',
     loadChildren: () => loadRemoteModule({
-      type: 'manifest',
-      remoteName: 'personal-note',
+      remoteEntry: 'http://localhost:4204/remoteEntry.js',
+      remoteName: 'personalNote',
       exposedModule: './Module'
     }).then(m => m.PersonalNoteModule)
   },
