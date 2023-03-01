@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthLibService, MessageService } from '~shared';
+import { AuthLibService } from '~libs';
 
 @Component({
   selector: 'app-root',

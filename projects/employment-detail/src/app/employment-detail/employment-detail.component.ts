@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { EmploymentDetail } from '~libs';
 import { selectEmploymentDetail } from './services/employment-detail.reducer';
 import { fetch } from './services/employment-detail.actions';
-import { AuthLibService } from '~shared';
+import { AuthLibService } from '~libs';
 
 @Component({
   selector: 'app-employment-detail',
