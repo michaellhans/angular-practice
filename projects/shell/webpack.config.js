@@ -23,13 +23,8 @@ module.exports = {
       ...sharedMappings.getAliases(),
     }
   },
-  experiments: {
-    outputModule: true
-  },
   plugins: [
     new ModuleFederationPlugin({
-        library: { type: "module" },
-
         // For hosts (please adjust)
         remotes: {
           "companyProfile": "companyProfile@http://localhost:4201/remoteEntry.js",

@@ -23,7 +23,6 @@ export class PersonalDetailService {
 
   updatePersonalDetail(personalDetail: PersonalDetail): Observable<PersonalDetail> {
     localStorage.setItem("personalDetail", JSON.stringify(personalDetail));
-    console.log(localStorage.getItem("personalDetail"));
     this.messageService.add('Personal Detail Service: updated Personal Detail and save it to Local Storage');
     return of(personalDetail);
   }

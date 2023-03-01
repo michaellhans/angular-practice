@@ -7,7 +7,5 @@ import { MessageService } from '../../services/message.service';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent {
-  constructor(public messageService: MessageService){
-    console.log(this.messageService);
-  }
+  constructor(public messageService: MessageService){ }
 }

@@ -4,17 +4,6 @@
         <img [src]="companyProfileX.imgUrl" />
         <h3>{{companyProfileX.name}}</h3>
     </div>
-    <!-- <carousel>
-      <slide>
-        <img src="../../../../assets/1.jpg" alt="first slide" style="display: block; width: 100%;">
-      </slide>
-      <slide>
-        <img src="../../../../assets/2.jpg" alt="second slide" style="display: block; width: 100%;">
-      </slide>
-      <slide>
-        <img src="../../../../assets/3.jpg" alt="third slide" style="display: block; width: 100%;">
-      </slide>
-    </carousel> -->
   
     <app-attribute-item [name]="'Alamat'" [value]="companyProfileX.alamat"></app-attribute-item>
     <app-attribute-item [name]="'Kota / Kabupaten'" [value]="companyProfileX.kota"></app-attribute-item>
@@ -23,4 +12,5 @@
     <app-attribute-item [name]="'Kode Pos'" [value]="companyProfileX.kodepos"></app-attribute-item>
     <app-attribute-item [name]="'Telepon'" [value]="companyProfileX.telepon"></app-attribute-item>
   </div>
+  <app-messages></app-messages>
 </app-container>

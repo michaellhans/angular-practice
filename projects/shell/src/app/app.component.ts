@@ -9,8 +9,7 @@ import { AuthLibService, MessageService } from '~shared';
 export class AppComponent {
   title = 'shell';
 
-  constructor(private messageService: MessageService, private service: AuthLibService) {
-    this.service.login('Max', 'Hal');
-    this.messageService.add('Loaded from special');
+  constructor(private service: AuthLibService) {
+    this.service.login('Michael Hans', 'Halaman');
   }
 }
