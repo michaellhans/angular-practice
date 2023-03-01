@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AttributeItemComponent } from './components/attribute-item/attribute-item.component';
 import { MessagesComponent } from './components/messages/messages.component';
@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { AttributeItemFormComponent } from './components/attribute-item-form/attribute-item-form.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PopoverModule } from 'ngx-bootstrap/popover';
+import { MessageService } from './services/message.service';
 
 @NgModule({
   declarations: [AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent],
@@ -17,4 +18,11 @@ import { PopoverModule } from 'ngx-bootstrap/popover';
   ],
   exports: [ PopoverModule, RouterModule, CommonModule, MatListModule, FormsModule, ReactiveFormsModule, AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent ]
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot(): ModuleWithProviders<SharedModule> {
+    return {
+      ngModule: SharedModule,
+      providers: [MessageService]
+    };
+  }
+}

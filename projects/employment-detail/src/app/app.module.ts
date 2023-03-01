@@ -15,7 +15,7 @@ import { EmploymentDetailModule } from './employment-detail/employment-detail.mo
     AppComponent
   ],
   imports: [
-    SharedModule,
+    SharedModule.forRoot(),
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     EmploymentDetailModule,
