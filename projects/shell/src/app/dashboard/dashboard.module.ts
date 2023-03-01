@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard.component';
 import { SharedModule } from '~shared';
-import { CoreRoutingModule } from './core-routing.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
 
@@ -9,8 +9,8 @@ import { CoreRoutingModule } from './core-routing.module';
   declarations: [DashboardComponent],
   imports: [
     SharedModule,
-    CoreRoutingModule
+    DashboardRoutingModule
   ],
   exports: [SharedModule, DashboardComponent]
 })
-export class CoreModule { }
+export class DashboardModule { }

@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { 
     path: '',
-    loadChildren: () => import('./modules/core/core.module').then(m => m.CoreModule)  
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)  
   },
   { 
     path: 'company-profile',
