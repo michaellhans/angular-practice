@@ -9,6 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CompanyProfileEffects } from './services/company-profile.effects';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CompanyProfileService } from './services/company-profile.service';
+import { DatepickerModule } from '@catapa/ui/datepicker';
 
 @NgModule({
   declarations: [ ProfileComponent ],
@@ -17,7 +18,8 @@ import { CompanyProfileService } from './services/company-profile.service';
     CompanyProfileRoutingModule,
     StoreModule.forFeature("companyProfile", companyProfileReducer),
     EffectsModule.forFeature([CompanyProfileEffects]),
-    CarouselModule
+    CarouselModule,
+    DatepickerModule
   ],
   providers: [CompanyProfileService]
 })

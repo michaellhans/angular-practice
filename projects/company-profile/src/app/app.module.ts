@@ -9,6 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompanyProfileModule } from './company-profile/company-profile.module';
 
+import { DateConfiguration, DatepickerModule } from '@catapa/ui/datepicker';
+import { AuthenticationModule } from '@catapa/network';
+
+export function dateConfiguration() {
+  return new DateConfiguration('en');
+}
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,6 +25,14 @@ import { CompanyProfileModule } from './company-profile/company-profile.module';
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     BrowserModule,
+    DatepickerModule.forRoot({
+      provide: DateConfiguration,
+      useFactory: dateConfiguration
+    }),
+    AuthenticationModule.forRoot({
+      authPath: 'michael',
+      revokePath: 'hans'
+    }),
     BrowserAnimationsModule,
     AppRoutingModule,
     CompanyProfileModule

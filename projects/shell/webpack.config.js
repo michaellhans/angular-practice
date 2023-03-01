@@ -36,7 +36,7 @@ module.exports = {
         shared: {
           ...shareAll({
             singleton: true,
-            strictVersion: true,
+            strictVersion: false,
             requiredVersion: 'auto',
             eager: true
           }),

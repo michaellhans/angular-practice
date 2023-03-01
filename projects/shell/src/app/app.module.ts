@@ -9,6 +9,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DateConfiguration, DatepickerModule } from '@catapa/ui/datepicker';
+import { AuthenticationModule } from '@catapa/network';
+
+export function dateConfiguration() {
+  return new DateConfiguration('en');
+}
 
 @NgModule({
   declarations: [
@@ -19,6 +25,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule.forRoot(),
+    DatepickerModule.forRoot({
+      provide: DateConfiguration,
+      useFactory: dateConfiguration
+    }),
+    AuthenticationModule.forRoot({
+      authPath: 'if6099',
+      revokePath: 'gdplabs'
+    }),
     DashboardModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
