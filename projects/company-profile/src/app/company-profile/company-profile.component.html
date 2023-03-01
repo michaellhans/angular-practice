@@ -1,5 +1,6 @@
 <app-container name="Company Profile">
   <div *ngIf="companyProfile$ | async as companyProfileX">
+    <app-attribute-item [name]="'User Login'" [value]="user"></app-attribute-item>
     <div class="companyProfile-pic">
         <img [src]="companyProfileX.imgUrl" />
         <h3>{{companyProfileX.name}}</h3>

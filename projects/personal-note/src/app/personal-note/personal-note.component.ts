@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import 'quill-mention';
 import 'quill-emoji';
+import { AuthLibService } from '~libs';
+import { MessageService } from '~shared';
 
 @Component({
   selector: 'app-personal-note',
@@ -8,6 +10,7 @@ import 'quill-emoji';
   styleUrls: ['./personal-note.component.css']
 })
 export class PersonalNoteComponent {
+  user = this.service.user;
   htmlText ="<p>My Personal Note</p>"
   hasFocus = false;
   subject: string = '';
@@ -94,7 +97,9 @@ export class PersonalNoteComponent {
     }
   }
 
-  constructor(){ }
+  constructor(private service: AuthLibService, private messageService: MessageService){
+    this.messageService.add('Personal Note fetched');
+  }
 
   test = (event: any) => {
     console.log(event.keyCode);

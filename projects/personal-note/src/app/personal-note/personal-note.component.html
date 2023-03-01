@@ -2,6 +2,7 @@
     <div >
         <div class="general">
             <div class="details">
+                <app-attribute-item [name]="'User Login'" [value]="user"></app-attribute-item>
                 <app-attribute-item [name]="'Nama'" [value]="'Michael Hans'"></app-attribute-item>
                 <app-attribute-item [name]="'NIM'" [value]="'23522011'"></app-attribute-item>
                 <div *ngIf="editMode; else viewMode">
@@ -20,4 +21,5 @@
             </div> 
         </div>
     </div>
+    <app-messages></app-messages>
 </app-container>

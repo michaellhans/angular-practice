@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { PersonalDetail } from '~libs';
+import { AuthLibService, PersonalDetail } from '~libs';
 import { change, edit, fetch } from './services/personal-detail.actions';
 import { selectIsEdit, selectPersonalDetail } from './services/personal-detail.reducer';
 import { DatePipe } from '@angular/common';
@@ -15,9 +15,11 @@ import { DatePipe } from '@angular/common';
 export class PersonalDetailComponent {
   personalDetail$: Observable<PersonalDetail>;
   isEdit$: Observable<boolean>;
+  user = this.service.user;
+
   @ViewChild('personalDetailForm') personalDetailForm: NgForm | null = null;
 
-  constructor(private store: Store, public datePipe: DatePipe){
+  constructor(private store: Store, public datePipe: DatePipe, private service: AuthLibService){
     this.personalDetail$ = store.select(selectPersonalDetail);
     this.isEdit$ = store.select(selectIsEdit);
   }

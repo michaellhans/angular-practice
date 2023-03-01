@@ -24,6 +24,6 @@ import { PersonalDetailService } from './services/personal-detail.service';
     FormsModule,
     BsDatepickerModule.forRoot(),
   ],
-  providers: [BsDatepickerConfig, DatePipe, MessageService, PersonalDetailService]
+  providers: [BsDatepickerConfig, DatePipe, PersonalDetailService]
 })
 export class PersonalDetailModule { }

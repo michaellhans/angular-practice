@@ -1,5 +1,6 @@
 <app-container name="Data Personal">
     <div *ngIf="(personalDetail$ | async) as observable">
+        <app-attribute-item [name]="'User Login'" [value]="user"></app-attribute-item>
         <div *ngIf="(isEdit$ | async) as observableEdit; else editMode">
             <form #personalDetailForm="ngForm" (submit)="onSubmit(personalDetailForm.value)">
                 <h4>Jenis Kelamin</h4>
