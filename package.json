@@ -26,7 +26,7 @@
     "@catapa/network": "file:./catapa-network-v12.0.0.tgz",
     "@catapa/ng-bullet": "file:./catapa-ng-bullet-v1.0.3.tgz",
     "@catapa/storage": "file:./catapa-storage-v12.0.0.tgz",
-    "@catapa/ui": "file:./catapa-ui-v12.8.1.tgz",
+    "@catapa/ui": "file:./catapa-ui-v12.8.1.4.tgz",
     "@ngrx/effects": "^15.1.0",
     "@ngrx/store": "^15.1.0",
     "@ngrx/store-devtools": "^15.1.0",
