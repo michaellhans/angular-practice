@@ -1,18 +1,17 @@
-<app-container name="Company Profile">
+<app-container [name]="'COMPANY_PROFILE' | translate">
   <div *ngIf="companyProfile$ | async as companyProfileX">
-    <app-attribute-item [name]="'User Login'" [value]="user"></app-attribute-item>
+    <app-attribute-item [name]="'USER_LOGIN' | translate" [value]="user"></app-attribute-item>
     <div class="companyProfile-pic">
         <img [src]="companyProfileX.imgUrl" />
         <h3>{{companyProfileX.name}}</h3>
     </div>
   
-    <app-attribute-item [name]="'Alamat'" [value]="companyProfileX.alamat"></app-attribute-item>
-    <app-attribute-item [name]="'Kota / Kabupaten'" [value]="companyProfileX.kota"></app-attribute-item>
-    <app-attribute-item [name]="'Provinsi'" [value]="companyProfileX.provinsi"></app-attribute-item>
-    <app-attribute-item [name]="'Negara'" [value]="companyProfileX.negara"></app-attribute-item>
-    <app-attribute-item [name]="'Kode Pos'" [value]="companyProfileX.kodepos"></app-attribute-item>
-    <app-attribute-item [name]="'Telepon'" [value]="companyProfileX.telepon"></app-attribute-item>
+    <app-attribute-item [name]="'ADDRESS' | translate" [value]="companyProfileX.alamat"></app-attribute-item>
+    <app-attribute-item [name]="'CITY' | translate" [value]="companyProfileX.kota"></app-attribute-item>
+    <app-attribute-item [name]="'PROVINCE' | translate" [value]="companyProfileX.provinsi"></app-attribute-item>
+    <app-attribute-item [name]="'COUNTRY' | translate" [value]="companyProfileX.negara"></app-attribute-item>
+    <app-attribute-item [name]="'POSTAL_CODE' | translate" [value]="companyProfileX.kodepos"></app-attribute-item>
+    <app-attribute-item [name]="'PHONE' | translate" [value]="companyProfileX.telepon"></app-attribute-item>
   </div>
   <app-messages></app-messages>
-  <ctp-datepicker></ctp-datepicker>
 </app-container>

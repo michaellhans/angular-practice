@@ -10,13 +10,14 @@ import { AttributeItemFormComponent } from './components/attribute-item-form/att
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { MessageService } from './services/message.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent],
   imports: [
     CommonModule, RouterModule, MatListModule, FormsModule, ReactiveFormsModule, PopoverModule
   ],
-  exports: [ PopoverModule, RouterModule, CommonModule, MatListModule, FormsModule, ReactiveFormsModule, AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent ]
+  exports: [ PopoverModule, RouterModule, CommonModule, MatListModule, FormsModule, ReactiveFormsModule, AttributeItemComponent, AttributeItemFormComponent, MessagesComponent, TopBarComponent, ContainerComponent, TranslateModule ]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {

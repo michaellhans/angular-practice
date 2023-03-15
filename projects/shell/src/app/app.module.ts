@@ -10,11 +10,19 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateConfiguration, DatepickerModule } from '@catapa/ui/datepicker';
-import { AuthenticationModule } from '@catapa/network';
+import { AuthenticationModule, HttpClient, HttpClientModule } from '@catapa/network';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader } from '@ngx-translate/core';
 
 export function dateConfiguration() {
   return new DateConfiguration('en');
 }
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 
 @NgModule({
   declarations: [
@@ -22,6 +30,14 @@ export function dateConfiguration() {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule.forRoot(),
