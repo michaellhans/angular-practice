@@ -16,12 +16,12 @@ import { CustomTranslationLoader } from './custom-translation-loader';
   imports: [
     SharedModule,
     TranslateModule.forChild({
-        extend: true,
+      extend: true,
+      isolate: false,
         loader: {
           provide: TranslateLoader,
           useClass: CustomTranslationLoader,
         },
-        isolate: true
     }),
     CompanyProfileRoutingModule,
     StoreModule.forFeature("companyProfile", companyProfileReducer),

@@ -1,7 +1,8 @@
 export const COMPANY_PROFILE =
 {
     id: 1,
-    imgUrl: "https://cdn.techinasia.com/data/images/5b33cff59f8e65487cf4b63f4d3e8a12.jpg",
+    // imgUrl: "https://cdn.techinasia.com/data/images/5b33cff59f8e65487cf4b63f4d3e8a12.jpg",
+    imgUrl: "assets/images/gdp-labs-company.jpg",
     name: "GDP Labs",
     alamat: "Jl. Dr. Otten No.10, Pasir Kaliki, Kec. Cicendo",
     kota: "Bandung",

@@ -2,7 +2,7 @@
   <div *ngIf="companyProfile$ | async as companyProfileX">
     <app-attribute-item [name]="'USER_LOGIN' | translate" [value]="user"></app-attribute-item>
     <div class="companyProfile-pic">
-        <img [src]="companyProfileX.imgUrl" />
+        <img [src]="assetUrl + companyProfileX.imgUrl" />
         <h3>{{companyProfileX.name}}</h3>
     </div>
   

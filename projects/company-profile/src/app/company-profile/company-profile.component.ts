@@ -14,6 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ProfileComponent implements OnInit {
   companyProfile$: Observable<CompanyProfile>
+  assetUrl = __webpack_public_path__;
   user = this.service.user;
 
   constructor(private store: Store, private service: AuthLibService, translate: TranslateService, @Inject(AUTH_CONFIG) config: any) {
@@ -23,7 +24,8 @@ export class ProfileComponent implements OnInit {
     console.log('config', config);
     
     // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('en');
+    const currentLang = translate.currentLang;
+    translate.currentLang = '';
 
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use('id');

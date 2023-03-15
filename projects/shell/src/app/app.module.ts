@@ -32,6 +32,8 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot({
+      // extend: true,
+      // isolate: false,
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
