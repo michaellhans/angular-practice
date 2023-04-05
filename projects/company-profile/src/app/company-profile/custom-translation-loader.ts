@@ -12,7 +12,6 @@ export class CustomTranslationLoader implements TranslateLoader  {
   constructor() {}
 
   getTranslation(lang: string): Observable<any> {
-    console.log("aaa");
       return of(this.languages[lang]);
   }
 }

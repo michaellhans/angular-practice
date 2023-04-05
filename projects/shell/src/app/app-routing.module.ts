@@ -2,6 +2,8 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+console.log(process.env)
+
 const routes: Routes = [
   { 
     path: '',
@@ -10,7 +12,7 @@ const routes: Routes = [
   { 
     path: 'company-profile',
     loadChildren: () => loadRemoteModule({
-      remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      remoteEntry: process.env["COMPANY_PROFILE"],
       remoteName: 'companyProfile',
       exposedModule: './Module'      // exposed module, following the remote webpack.config.js
     }).then(m => m.CompanyProfileModule) // the module that wanted to be used
@@ -18,7 +20,7 @@ const routes: Routes = [
   { 
     path: 'employment-detail',
     loadChildren: () => loadRemoteModule({
-      remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      remoteEntry: process.env["EMPLOYMENT_DETAIL"],
       remoteName: 'employmentDetail',
       exposedModule: './Module'
     }).then(m => m.EmploymentDetailModule)
@@ -26,7 +28,7 @@ const routes: Routes = [
   { 
     path: 'personal-detail',
     loadChildren: () => loadRemoteModule({
-      remoteEntry: 'http://localhost:4203/remoteEntry.js',
+      remoteEntry: process.env["PERSONAL_DETAIL"],
       remoteName: 'personalDetail',
       exposedModule: './Module'
     }).then(m => m.PersonalDetailModule)
@@ -34,7 +36,7 @@ const routes: Routes = [
   { 
     path: 'personal-note',
     loadChildren: () => loadRemoteModule({
-      remoteEntry: 'http://localhost:4204/remoteEntry.js',
+      remoteEntry: process.env["PERSONAL_NOTE"],
       remoteName: 'personalNote',
       exposedModule: './Module'
     }).then(m => m.PersonalNoteModule)

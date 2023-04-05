@@ -1,6 +1,7 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
+const Dotenv = require('dotenv-webpack');
 
 const shareAll = mf.shareAll;
 const sharedMappings = new mf.SharedMappings();
@@ -24,13 +25,16 @@ module.exports = {
     }
   },
   plugins: [
+    new Dotenv({
+      path: ".env"
+    }),
     new ModuleFederationPlugin({
         // For hosts (please adjust)
         remotes: {
-          "companyProfile": "companyProfile@http://localhost:4201/remoteEntry.js",
-          "employmentDetail": "employmentProfile@http://localhost:4202/remoteEntry.js",
-          "personalDetail": "personalDetail@http://localhost:4203/remoteEntry.js",
-          "personalNote": "personalNote@http://localhost:4204/remoteEntry.js"
+          "companyProfile": "companyProfile@" + process.env.COMPANY_PROFILE,
+          "employmentDetail": "employmentProfile@" + process.env.EMPLOYMENT_DETAIL,
+          "personalDetail": "personalDetail@" + process.env.PERSONAL_DETAIL,
+          "personalNote": "personalNote@" + process.env.PERSONAL_NOTE
         },
 
         shared: {
