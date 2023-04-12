@@ -10,7 +10,7 @@ const routes: Routes = [
   { 
     path: 'company-profile',
     loadChildren: () => loadRemoteModule({
-      remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      remoteEntry: 'http://localhost:4200/_remotes/app1/remoteEntry.js',
       remoteName: 'companyProfile',
       exposedModule: './Module'      // exposed module, following the remote webpack.config.js
     }).then(m => m.CompanyProfileModule) // the module that wanted to be used
@@ -18,7 +18,7 @@ const routes: Routes = [
   { 
     path: 'employment-detail',
     loadChildren: () => loadRemoteModule({
-      remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      remoteEntry: 'http://localhost:4200/_remotes/app2/remoteEntry.js',
       remoteName: 'employmentDetail',
       exposedModule: './Module'
     }).then(m => m.EmploymentDetailModule)
@@ -26,7 +26,7 @@ const routes: Routes = [
   { 
     path: 'personal-detail',
     loadChildren: () => loadRemoteModule({
-      remoteEntry: 'http://localhost:4203/remoteEntry.js',
+      remoteEntry: 'http://localhost:4200/_remotes/app3/remoteEntry.js',
       remoteName: 'personalDetail',
       exposedModule: './Module'
     }).then(m => m.PersonalDetailModule)
@@ -34,7 +34,7 @@ const routes: Routes = [
   { 
     path: 'personal-note',
     loadChildren: () => loadRemoteModule({
-      remoteEntry: 'http://localhost:4204/remoteEntry.js',
+      remoteEntry: 'http://localhost:4200/_remotes/app4/remoteEntry.js',
       remoteName: 'personalNote',
       exposedModule: './Module'
     }).then(m => m.PersonalNoteModule)

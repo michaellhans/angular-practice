@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PersonalDetailModule } from './personal-detail/personal-detail.module';
 import { SharedModule } from '~shared';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     SharedModule.forRoot()
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/_remotes/app3'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

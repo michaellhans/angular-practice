@@ -8,6 +8,7 @@ import { SharedModule } from '~shared';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompanyProfileModule } from './company-profile/company-profile.module';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CompanyProfileModule } from './company-profile/company-profile.module';
     AppRoutingModule,
     CompanyProfileModule
   ],
+  providers: [{provide: APP_BASE_HREF, useValue: '/_remotes/app1'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

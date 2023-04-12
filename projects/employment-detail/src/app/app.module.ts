@@ -9,6 +9,7 @@ import { MessageService } from '~shared';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmploymentDetailModule } from './employment-detail/employment-detail.module';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { EmploymentDetailModule } from './employment-detail/employment-detail.mo
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/_remotes/app2'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

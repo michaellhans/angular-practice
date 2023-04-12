@@ -27,10 +27,10 @@ module.exports = {
     new ModuleFederationPlugin({
         // For hosts (please adjust)
         remotes: {
-          "companyProfile": "companyProfile@http://localhost:4201/remoteEntry.js",
-          "employmentDetail": "employmentProfile@http://localhost:4202/remoteEntry.js",
-          "personalDetail": "personalDetail@http://localhost:4203/remoteEntry.js",
-          "personalNote": "personalNote@http://localhost:4204/remoteEntry.js"
+          "companyProfile": "companyProfile@http://localhost:4200/_remotes/app1/remoteEntry.js",
+          "employmentDetail": "employmentProfile@http://localhost:4200/_remotes/app2/remoteEntry.js",
+          "personalDetail": "personalDetail@http://localhost:4200/_remotes/app3/remoteEntry.js",
+          "personalNote": "personalNote@http://localhost:4200/_remotes/app4/remoteEntry.js"
         },
 
         shared: {
